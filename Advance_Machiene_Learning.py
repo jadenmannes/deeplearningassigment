@@ -373,7 +373,6 @@ if __name__ == "__main__":
         print("\nConsensus HP from outer folds:")
         print(json.dumps(consensus_hp, indent=2))
 
-        # 3) (Optional) Retrain once on a fresh stratified split to get a final model to save/deploy
         pre, X_df, y_df, class_names = make_preprocessor(df)
         labels = y_df.values.argmax(1)
         model, pre_fitted, acc, f1m, hist, y_true, y_pred = train_once(
@@ -437,3 +436,4 @@ if __name__ == "__main__":
         ax.set_title("Confusion Matrix (Normalized)")
         plt.tight_layout()
         plt.show()
+
